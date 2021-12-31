@@ -1,0 +1,30 @@
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+        maven {
+            url 'https://oss.sonatype.org/content/repositories/snapshots/'
+        }
+    }
+    dependencies {
+        classpath "org.openjfx:javafx-plugin:0.0.+"
+    }
+}
+apply plugin: 'application'
+apply plugin: 'org.openjfx.javafxplugin'
+
+mainClassName = 'org.openjfx.gradle.javafx.test/org.openjfx.gradle.javafx.test.Main'
+
+javafx {
+    modules = ['javafx.controls']
+}
+
+
+sourceCompatibility = 11
+targetCompatibility = 11
+
+repositories {
+    mavenCentral()
+}
+
